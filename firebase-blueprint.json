@@ -1,0 +1,107 @@
+{
+  "entities": {
+    "Portfolio": {
+      "title": "Portfolio",
+      "description": "Portfolio items for the shorts reference page",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "category": { "type": "string" },
+        "thumbnail": { "type": "string" },
+        "thumbnails": { "type": "array", "items": { "type": "string" } },
+        "linkUrl": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "category", "thumbnail", "linkUrl"]
+    },
+    "Reference": {
+      "title": "Reference",
+      "description": "Reference items for the reference page",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "category": { "type": "string" },
+        "thumbnail": { "type": "string" },
+        "thumbnails": { "type": "array", "items": { "type": "string" } },
+        "linkUrl": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "category", "thumbnail", "linkUrl"]
+    },
+    "WebsiteTemplate": {
+      "title": "WebsiteTemplate",
+      "description": "Website templates for the admin page",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "category": { "type": "string" },
+        "thumbnail": { "type": "string" },
+        "thumbnails": { "type": "array", "items": { "type": "string" } },
+        "linkUrl": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "category", "thumbnail", "linkUrl"]
+    },
+    "Consultation": {
+      "title": "Consultation",
+      "description": "Consultation requests from users",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "contact": { "type": "string" },
+        "brandName": { "type": "string" },
+        "productionPurpose": { "type": "string" },
+        "videoType": { "type": "string" },
+        "referenceLink": { "type": "string" },
+        "status": { "type": "string", "enum": ["pending", "contacted", "completed"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "contact", "brandName", "productionPurpose", "videoType"]
+    },
+    "Freelancer": {
+      "title": "Freelancer",
+      "description": "Freelancer registration applications",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "contact": { "type": "string" },
+        "email": { "type": "string" },
+        "portfolioUrl": { "type": "string" },
+        "experienceIntro": { "type": "string" },
+        "consultationLogs": { "type": "string" },
+        "status": { "type": "string", "enum": ["pending", "reviewed", "accepted", "rejected"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "contact", "email", "portfolioUrl", "experienceIntro"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Orders placed by clients",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "clientName": { "type": "string" },
+        "projectName": { "type": "string" },
+        "status": { "type": "string", "enum": ["pending", "in-progress", "revision", "completed"] },
+        "amount": { "type": "number" },
+        "dueDate": { "type": "string", "format": "date" },
+        "modificationRequests": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["clientName", "projectName", "status", "amount", "dueDate"]
+    }
+  },
+  "firestore": {
+    "portfolio": { "schema": "Portfolio", "description": "Shorts reference items" },
+    "references": { "schema": "Reference", "description": "Reference items" },
+    "website_templates": { "schema": "WebsiteTemplate", "description": "Website templates" },
+    "consultations": { "schema": "Consultation", "description": "Consultation requests" },
+    "freelancers": { "schema": "Freelancer", "description": "Freelancer applications" },
+    "orders": { "schema": "Order", "description": "Client orders" }
+  }
+}

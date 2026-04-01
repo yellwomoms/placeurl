@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Noto Sans KR", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-brand-dark: #0B1E36;
+  --color-brand-cyan: #00AEEF;
+  --color-brand-blue: #0077D6;
+  
+  --radius-4xl: 2rem;
+  --radius-5xl: 2.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply antialiased text-brand-dark bg-white;
+}
+
+.tracking-tightest {
+  letter-spacing: -0.05em;
+}
+
+.glass-nav {
+  @apply backdrop-blur-xl bg-white/80 border-b border-zinc-100;
+}
