@@ -54,7 +54,38 @@ export default function FreelancerRegister() {
         createdAt: serverTimestamp()
       });
 
-      // 2. Send notification via n8n if configured
+      // 2. Send notification via Telegram
+      try {
+        const botToken = (import.meta as any).env.VITE_TELEGRAM_BOT_TOKEN || "8562623357:AAEhnm4zTu_7WBTQKeutPFWs3d4rrHpfU2k";
+        const chatId = (import.meta as any).env.VITE_TELEGRAM_CHAT_ID || "5333544557";
+        
+        const message = `
+🤝 <b>[PlaceURL 신규 프리랜서 신청]</b>
+────────────────
+👤 <b>성함:</b> ${formData.name}
+📧 <b>이메일:</b> ${formData.email}
+📞 <b>연락처:</b> ${formData.phone}
+🏢 <b>유형:</b> ${formData.type === 'individual' ? '개인' : '개인사업자'}
+🔗 <b>포트폴리오:</b> ${formData.portfolioLink || '없음'}
+📝 <b>경력 및 자기소개:</b>
+${formData.experienceIntro}
+────────────────
+        `.trim();
+
+        await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            chat_id: chatId,
+            text: message,
+            parse_mode: "HTML"
+          })
+        });
+      } catch (error) {
+        console.error('Failed to send Telegram notification:', error);
+      }
+
+      // 3. Send notification via n8n if configured
       try {
         const n8nWebhookUrl = (import.meta as any).env.VITE_N8N_WEBHOOK_URL;
         if (n8nWebhookUrl) {
@@ -160,7 +191,7 @@ export default function FreelancerRegister() {
                       onClick={() => setFormData(prev => ({ ...prev, type: 'individual' }))}
                       className={`p-6 rounded-2xl border-2 transition-all flex flex-col items-center gap-2 ${
                         formData.type === 'individual' 
-                        ? 'border-zinc-950 bg-zinc-950 text-white shadow-lg' 
+                        ? 'border-brand-blue bg-brand-blue text-white shadow-lg' 
                         : 'border-zinc-100 bg-zinc-50 text-zinc-400 hover:border-zinc-200'
                       }`}
                     >
@@ -172,7 +203,7 @@ export default function FreelancerRegister() {
                       onClick={() => setFormData(prev => ({ ...prev, type: 'business' }))}
                       className={`p-6 rounded-2xl border-2 transition-all flex flex-col items-center gap-2 ${
                         formData.type === 'business' 
-                        ? 'border-zinc-950 bg-zinc-950 text-white shadow-lg' 
+                        ? 'border-brand-blue bg-brand-blue text-white shadow-lg' 
                         : 'border-zinc-100 bg-zinc-50 text-zinc-400 hover:border-zinc-200'
                       }`}
                     >
@@ -279,7 +310,7 @@ export default function FreelancerRegister() {
                 <button 
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-zinc-950 text-white py-6 rounded-2xl font-black text-lg hover:bg-zinc-800 hover:scale-[1.01] transition-all flex items-center justify-center gap-3 shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-brand-blue text-white py-6 rounded-2xl font-black text-lg hover:bg-blue-600 hover:scale-[1.01] transition-all flex items-center justify-center gap-3 shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? '신청 중...' : '프리랜서 등록 신청하기'} <Send size={20} />
                 </button>
