@@ -117,7 +117,8 @@ export default function Shorts() {
               <div className="relative aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl border border-zinc-50">
                 <img 
                   src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Music Copyright Risk"
+                  title={`쇼츠제작\n릴스제작\n유튜브숏폼대행\nAI영상제작\n홍보영상편집\n홈페이지제작\n상세페이지제작\n전단지배포\n명함디자인\nSNS광고대행\n온라인마케팅\n옥외광고\n유튜브영상제작\n브랜드홍보\n틱톡영상\n숏폼마케팅\n\nPlaceURL(http://www.placeURL.com)\nTEL: 010-4429-2078`}
+                  alt={`쇼츠제작\n릴스제작\n유튜브숏폼대행\nAI영상제작\n유튜브영상제작\n홍보영상편집\n홈페이지제작\n상세페이지제작\n전단지배포\n명함디자인\nSNS광고대행\n온라인마케팅\n옥외광고\n브랜드홍보\n틱톡영상\n숏폼마케팅\n\nPlaceURL(http://www.placeURL.com)\nTEL: 010-4429-2078`}
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   referrerPolicy="no-referrer"
                 />
@@ -137,7 +138,8 @@ export default function Shorts() {
               <div className="relative aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl border border-zinc-50">
                 <img 
                   src="https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=2059&auto=format&fit=crop"
-                  alt="Video Copying Risk"
+                  title={`쇼츠제작\n릴스제작\n유튜브숏폼대행\nAI영상제작\n홍보영상편집\n홈페이지제작\n상세페이지제작\n전단지배포\n명함디자인\nSNS광고대행\n온라인마케팅\n옥외광고\n유튜브영상제작\n브랜드홍보\n틱톡영상\n숏폼마케팅\n\nPlaceURL(http://www.placeURL.com)\nTEL: 010-4429-2078`}
+                  alt={`쇼츠제작\n릴스제작\n유튜브숏폼대행\nAI영상제작\n유튜브영상제작\n홍보영상편집\n홈페이지제작\n상세페이지제작\n전단지배포\n명함디자인\nSNS광고대행\n온라인마케팅\n옥외광고\n브랜드홍보\n틱톡영상\n숏폼마케팅\n\nPlaceURL(http://www.placeURL.com)\nTEL: 010-4429-2078`}
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   referrerPolicy="no-referrer"
                 />
@@ -195,7 +197,8 @@ export default function Shorts() {
               <div className="relative aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl border border-zinc-50">
                 <img 
                   src="https://images.unsplash.com/photo-1642789673880-f25084b1c46d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Font Copyright Risk"
+                  title={`쇼츠제작\n릴스제작\n유튜브숏폼대행\nAI영상제작\n홍보영상편집\n홈페이지제작\n상세페이지제작\n전단지배포\n명함디자인\nSNS광고대행\n온라인마케팅\n옥외광고\n유튜브영상제작\n브랜드홍보\n틱톡영상\n숏폼마케팅\n\nPlaceURL(http://www.placeURL.com)\nTEL: 010-4429-2078`}
+                  alt={`쇼츠제작\n릴스제작\n유튜브숏폼대행\nAI영상제작\n유튜브영상제작\n홍보영상편집\n홈페이지제작\n상세페이지제작\n전단지배포\n명함디자인\nSNS광고대행\n온라인마케팅\n옥외광고\n브랜드홍보\n틱톡영상\n숏폼마케팅\n\nPlaceURL(http://www.placeURL.com)\nTEL: 010-4429-2078`}
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   referrerPolicy="no-referrer"
                 />
@@ -242,7 +245,8 @@ export default function Shorts() {
               <div className="relative aspect-square rounded-[48px] overflow-hidden border border-white/10 shadow-2xl">
                 <img 
                   src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop"
-                  alt="Safety and Quality" 
+                  title={`쇼츠제작\n릴스제작\n유튜브숏폼대행\nAI영상제작\n홍보영상편집\n홈페이지제작\n상세페이지제작\n전단지배포\n명함디자인\nSNS광고대행\n온라인마케팅\n옥외광고\n유튜브영상제작\n브랜드홍보\n틱톡영상\n숏폼마케팅\n\nPlaceURL(http://www.placeURL.com)\nTEL: 010-4429-2078`}
+                  alt={`쇼츠제작\n릴스제작\n유튜브숏폼대행\nAI영상제작\n유튜브영상제작\n홍보영상편집\n홈페이지제작\n상세페이지제작\n전단지배포\n명함디자인\nSNS광고대행\n온라인마케팅\n옥외광고\n브랜드홍보\n틱톡영상\n숏폼마케팅\n\nPlaceURL(http://www.placeURL.com)\nTEL: 010-4429-2078`}
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   referrerPolicy="no-referrer"
                 />

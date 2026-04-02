@@ -164,7 +164,8 @@ export default function SNSPromotion() {
         <div className="absolute inset-0 opacity-50">
           <img 
             src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop" 
-            alt="Marketing Background" 
+            title={`쇼츠제작\n릴스제작\n유튜브숏폼대행\nAI영상제작\n홍보영상편집\n홈페이지제작\n상세페이지제작\n전단지배포\n명함디자인\nSNS광고대행\n온라인마케팅\n옥외광고\n유튜브영상제작\n브랜드홍보\n틱톡영상\n숏폼마케팅\n\nPlaceURL(http://www.placeURL.com)\nTEL: 010-4429-2078`}
+            alt={`쇼츠제작\n릴스제작\n유튜브숏폼대행\nAI영상제작\n유튜브영상제작\n홍보영상편집\n홈페이지제작\n상세페이지제작\n전단지배포\n명함디자인\nSNS광고대행\n온라인마케팅\n옥외광고\n브랜드홍보\n틱톡영상\n숏폼마케팅\n\nPlaceURL(http://www.placeURL.com)\nTEL: 010-4429-2078`}
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
@@ -258,7 +259,8 @@ export default function SNSPromotion() {
               >
                 <img 
                   src={study.image} 
-                  alt={study.title} 
+                  title={`쇼츠제작\n릴스제작\n유튜브숏폼대행\nAI영상제작\n홍보영상편집\n홈페이지제작\n상세페이지제작\n전단지배포\n명함디자인\nSNS광고대행\n온라인마케팅\n옥외광고\n유튜브영상제작\n브랜드홍보\n틱톡영상\n숏폼마케팅\n\nPlaceURL(http://www.placeURL.com)\nTEL: 010-4429-2078`}
+                  alt={`쇼츠제작\n릴스제작\n유튜브숏폼대행\nAI영상제작\n유튜브영상제작\n홍보영상편집\n홈페이지제작\n상세페이지제작\n전단지배포\n명함디자인\nSNS광고대행\n온라인마케팅\n옥외광고\n브랜드홍보\n틱톡영상\n숏폼마케팅\n\nPlaceURL(http://www.placeURL.com)\nTEL: 010-4429-2078`}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   referrerPolicy="no-referrer"
                 />
@@ -322,7 +324,8 @@ export default function SNSPromotion() {
                 <div className="absolute -inset-4 bg-blue-600/10 rounded-[3rem] blur-2xl" />
                 <img 
                   src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=2548&auto=format&fit=crop" 
-                  alt="SNS Impact" 
+                  title={`쇼츠제작\n릴스제작\n유튜브숏폼대행\nAI영상제작\n홍보영상편집\n홈페이지제작\n상세페이지제작\n전단지배포\n명함디자인\nSNS광고대행\n온라인마케팅\n옥외광고\n유튜브영상제작\n브랜드홍보\n틱톡영상\n숏폼마케팅\n\nPlaceURL(http://www.placeURL.com)\nTEL: 010-4429-2078`}
+                  alt={`쇼츠제작\n릴스제작\n유튜브숏폼대행\nAI영상제작\n유튜브영상제작\n홍보영상편집\n홈페이지제작\n상세페이지제작\n전단지배포\n명함디자인\nSNS광고대행\n온라인마케팅\n옥외광고\n브랜드홍보\n틱톡영상\n숏폼마케팅\n\nPlaceURL(http://www.placeURL.com)\nTEL: 010-4429-2078`}
                   className="relative rounded-[2.5rem] shadow-2xl"
                   referrerPolicy="no-referrer"
                 />
@@ -375,7 +378,8 @@ export default function SNSPromotion() {
                     <div className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-2xl">
                       <img 
                         src={service.image} 
-                        alt={service.title} 
+                        title={`쇼츠제작\n릴스제작\n유튜브숏폼대행\nAI영상제작\n홍보영상편집\n홈페이지제작\n상세페이지제작\n전단지배포\n명함디자인\nSNS광고대행\n온라인마케팅\n옥외광고\n유튜브영상제작\n브랜드홍보\n틱톡영상\n숏폼마케팅\n\nPlaceURL(http://www.placeURL.com)\nTEL: 010-4429-2078`}
+                        alt={`쇼츠제작\n릴스제작\n유튜브숏폼대행\nAI영상제작\n유튜브영상제작\n홍보영상편집\n홈페이지제작\n상세페이지제작\n전단지배포\n명함디자인\nSNS광고대행\n온라인마케팅\n옥외광고\n브랜드홍보\n틱톡영상\n숏폼마케팅\n\nPlaceURL(http://www.placeURL.com)\nTEL: 010-4429-2078`}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                         referrerPolicy="no-referrer"
                       />
@@ -444,7 +448,8 @@ export default function SNSPromotion() {
               >
                 <img 
                   src={solution.image} 
-                  alt={solution.title} 
+                  title={`쇼츠제작\n릴스제작\n유튜브숏폼대행\nAI영상제작\n홍보영상편집\n홈페이지제작\n상세페이지제작\n전단지배포\n명함디자인\nSNS광고대행\n온라인마케팅\n옥외광고\n유튜브영상제작\n브랜드홍보\n틱톡영상\n숏폼마케팅\n\nPlaceURL(http://www.placeURL.com)\nTEL: 010-4429-2078`}
+                  alt={`쇼츠제작\n릴스제작\n유튜브숏폼대행\nAI영상제작\n유튜브영상제작\n홍보영상편집\n홈페이지제작\n상세페이지제작\n전단지배포\n명함디자인\nSNS광고대행\n온라인마케팅\n옥외광고\n브랜드홍보\n틱톡영상\n숏폼마케팅\n\nPlaceURL(http://www.placeURL.com)\nTEL: 010-4429-2078`}
                   className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-700"
                   referrerPolicy="no-referrer"
                 />
@@ -594,7 +599,8 @@ export default function SNSPromotion() {
         <div className="absolute inset-0 opacity-30">
           <img 
             src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop" 
-            alt="CTA Background" 
+            title="쇼츠제작&#13릴스제작&#13유튜브숏폼대행&#13AI영상제작&#13홍보영상편집&#13홈페이지제작&#13상세페이지제작&#13전단지배포&#13명함디자인&#13SNS광고대행&#13온라인마케팅&#13옥외광고&#13유튜브영상제작&#13브랜드홍보&#13틱톡영상&#13숏폼마케팅&#13&#13PlaceURL(http://www.placeURL.com)&#13TEL: 010-4429-2078"
+            alt="쇼츠제작&#13릴스제작&#13유튜브숏폼대행&#13AI영상제작&#13유튜브영상제작&#13홍보영상편집&#13홈페이지제작&#13상세페이지제작&#13전단지배포&#13명함디자인&#13SNS광고대행&#13온라인마케팅&#13옥외광고&#13브랜드홍보&#13틱톡영상&#13숏폼마케팅&#13&#13PlaceURL(http://www.placeURL.com)&#13TEL: 010-4429-2078"
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />

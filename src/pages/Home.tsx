@@ -184,7 +184,8 @@ export default function Home() {
         <motion.div style={{ scale }} className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?q=80&w=2670&auto=format&fit=crop"
-            alt="Dark Ethereal Abstract Background"
+            title={`쇼츠제작\n릴스제작\n유튜브숏폼대행\nAI영상제작\n홍보영상편집\n홈페이지제작\n상세페이지제작\n전단지배포\n명함디자인\nSNS광고대행\n온라인마케팅\n옥외광고\n유튜브영상제작\n브랜드홍보\n틱톡영상\n숏폼마케팅\n\nPlaceURL(http://www.placeURL.com)\nTEL: 010-4429-2078`}
+            alt={`쇼츠제작\n릴스제작\n유튜브숏폼대행\nAI영상제작\n유튜브영상제작\n홍보영상편집\n홈페이지제작\n상세페이지제작\n전단지배포\n명함디자인\nSNS광고대행\n온라인마케팅\n옥외광고\n브랜드홍보\n틱톡영상\n숏폼마케팅\n\nPlaceURL(http://www.placeURL.com)\nTEL: 010-4429-2078`}
             className="w-full h-full object-cover opacity-60"
             referrerPolicy="no-referrer"
           />
@@ -248,7 +249,8 @@ export default function Home() {
               <div className="absolute -inset-10 bg-brand-cyan/10 rounded-[60px] -z-10 blur-3xl opacity-30" />
               <img 
                 src="https://images.unsplash.com/photo-1724754608903-79368ccef14a?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Shorts Impact"
+                title={`쇼츠제작\n릴스제작\n유튜브숏폼대행\nAI영상제작\n홍보영상편집\n홈페이지제작\n상세페이지제작\n전단지배포\n명함디자인\nSNS광고대행\n온라인마케팅\n옥외광고\n유튜브영상제작\n브랜드홍보\n틱톡영상\n숏폼마케팅\n\nPlaceURL(http://www.placeURL.com)\nTEL: 010-4429-2078`}
+                alt={`쇼츠제작\n릴스제작\n유튜브숏폼대행\nAI영상제작\n유튜브영상제작\n홍보영상편집\n홈페이지제작\n상세페이지제작\n전단지배포\n명함디자인\nSNS광고대행\n온라인마케팅\n옥외광고\n브랜드홍보\n틱톡영상\n숏폼마케팅\n\nPlaceURL(http://www.placeURL.com)\nTEL: 010-4429-2078`}
                 className="w-full rounded-[48px] shadow-2xl shadow-brand-cyan/10 object-cover aspect-video"
                 referrerPolicy="no-referrer"
               />
