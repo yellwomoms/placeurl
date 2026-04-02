@@ -289,7 +289,7 @@ export default function Production() {
 
             <AnimatePresence>
               {selectedTemplate && (
-                <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-10">
+                <div className="fixed inset-0 z-[100] flex items-center justify-center p-2 md:p-10">
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -301,36 +301,38 @@ export default function Production() {
                     initial={{ opacity: 0, scale: 0.9, y: 20 }}
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                    className="relative w-full max-w-6xl h-full max-h-[90vh] bg-white rounded-[32px] overflow-hidden shadow-2xl flex flex-col"
+                    className="relative w-full max-w-6xl h-full max-h-[95vh] md:max-h-[90vh] bg-white rounded-2xl md:rounded-[32px] overflow-hidden shadow-2xl flex flex-col"
                   >
-                    <div className="flex items-center justify-between px-8 py-4 border-b border-zinc-100">
-                      <div className="flex items-center gap-4">
-                        <h3 className="text-xl font-black tracking-tight text-zinc-950">{selectedTemplate.title}</h3>
-                        <span className="px-3 py-1 bg-zinc-100 text-zinc-500 text-[10px] font-bold rounded-full uppercase tracking-widest">
+                    <div className="flex items-center justify-between px-4 py-3 md:px-8 md:py-4 border-b border-zinc-100 bg-white sticky top-0 z-10">
+                      <div className="flex items-center gap-2 md:gap-4">
+                        <h3 className="text-base md:text-xl font-black tracking-tight text-zinc-950 truncate max-w-[180px] md:max-w-none">
+                          {selectedTemplate.title}
+                        </h3>
+                        <span className="px-2 py-0.5 md:px-3 md:py-1 bg-zinc-100 text-zinc-500 text-[8px] md:text-[10px] font-bold rounded-full uppercase tracking-widest">
                           {selectedTemplate.category}
                         </span>
                       </div>
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-1 md:gap-2">
                         {selectedTemplate.linkUrl && (
                           <a 
                             href={selectedTemplate.linkUrl} 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="p-2 hover:bg-zinc-100 rounded-full transition-all text-zinc-500 hover:text-blue-600"
+                            className="p-1.5 md:p-2 hover:bg-zinc-100 rounded-full transition-all text-zinc-500 hover:text-blue-600"
                             title="새 창에서 열기"
                           >
-                            <ExternalLink size={20} />
+                            <ExternalLink size={18} className="md:w-5 md:h-5" />
                           </a>
                         )}
                         <button 
                           onClick={() => setSelectedTemplate(null)}
-                          className="p-2 hover:bg-zinc-100 rounded-full transition-all text-zinc-500 hover:text-zinc-950"
+                          className="p-1.5 md:p-2 hover:bg-zinc-100 rounded-full transition-all text-zinc-500 hover:text-zinc-950"
                         >
-                          <X size={24} />
+                          <X size={20} className="md:w-6 md:h-6" />
                         </button>
                       </div>
                     </div>
-                    <div className="flex-grow bg-zinc-50 relative">
+                    <div className="flex-grow bg-zinc-50 relative overflow-auto">
                       {selectedTemplate.linkUrl ? (
                         <iframe 
                           src={selectedTemplate.linkUrl} 
@@ -338,14 +340,14 @@ export default function Production() {
                           title={selectedTemplate.title}
                         />
                       ) : (
-                        <div className="w-full h-full flex flex-col items-center justify-center p-12 text-center">
+                        <div className="w-full min-h-full flex flex-col items-center justify-center p-4 md:p-12 text-center">
                           <img 
                             src={selectedTemplate.image} 
                             alt={selectedTemplate.title}
-                            className="max-w-full max-h-[70vh] object-contain rounded-xl shadow-lg mb-8"
+                            className="max-w-full h-auto object-contain rounded-xl shadow-lg mb-4 md:mb-8"
                             referrerPolicy="no-referrer"
                           />
-                          <p className="text-zinc-400 font-medium">미리보기 링크가 등록되지 않았습니다.</p>
+                          <p className="text-zinc-400 font-medium text-xs md:text-sm">미리보기 링크가 등록되지 않았습니다.</p>
                         </div>
                       )}
                     </div>
