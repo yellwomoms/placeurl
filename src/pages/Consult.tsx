@@ -60,7 +60,41 @@ export default function Consult() {
         createdAt: serverTimestamp()
       });
 
-      // Send notification via n8n if configured, otherwise fallback to email
+      // Send notification via Telegram (Directly as requested)
+      try {
+        const botToken = (import.meta as any).env.VITE_TELEGRAM_BOT_TOKEN || "8562623357:AAEhnm4zTu_7WBTQKeutPFWs3d4rrHpfU2k";
+        const chatId = (import.meta as any).env.VITE_TELEGRAM_CHAT_ID || "5333544557";
+        
+        const message = `
+🚀 <b>[PlaceURL 신규 상담 신청]</b>
+────────────────
+👤 <b>성함/업체명:</b> ${formData.name}
+📞 <b>연락처:</b> ${formData.phone}
+🏢 <b>업종:</b> ${formData.industry}
+🎯 <b>제작 목적:</b> ${formData.productionPurpose}
+🔗 <b>레퍼런스:</b> ${formData.referenceLink || '없음'}
+📦 <b>선택 플랜:</b> ${formData.plan || '없음'}
+🔢 <b>제작 수량:</b> ${formData.quantity || '없음'}
+💰 <b>예산 구간:</b> ${formData.budget || '없음'}
+📝 <b>요청사항:</b>
+${formData.message}
+────────────────
+        `.trim();
+
+        await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            chat_id: chatId,
+            text: message,
+            parse_mode: "HTML"
+          })
+        });
+      } catch (error) {
+        console.error('Failed to send Telegram notification:', error);
+      }
+
+      // Send notification via n8n if configured
       try {
         const n8nWebhookUrl = (import.meta as any).env.VITE_N8N_WEBHOOK_URL;
         if (n8nWebhookUrl) {
@@ -75,16 +109,9 @@ export default function Consult() {
               pageUrl: window.location.href
             })
           });
-        } else {
-          await fetch('/api/send-consultation-email', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData)
-          });
         }
       } catch (error) {
-        console.error('Failed to send notification:', error);
-        // We don't block the success state if notification fails
+        console.error('Failed to send n8n notification:', error);
       }
 
       setIsSuccess(true);
