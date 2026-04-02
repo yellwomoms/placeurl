@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>PlaceURL | 쇼츠·릴스 영상 제작 및 SNS 홍보 대행 전문</title>
+  <link>https://placeurl.com/</link>
+  <description>AI 기반 고퀄리티 쇼츠, 릴스 제작부터 유튜브영상제작, 홈페이지, 상세페이지, 전단지 제작까지! PlaceURL이 당신의 브랜드를 위한 원스톱 온라인 광고와 SNS 홍보 대행을 책임집니다.</description>
+  <language>ko-kr</language>
+  <lastBuildDate>Thu, 02 Apr 2026 06:10:00 +0000</lastBuildDate>
+  <atom:link href="https://placeurl.com/rss.xml" rel="self" type="application/rss+xml" />
+  
+  <item>
+    <title>채널을 날려먹기 전에, 이 글부터 읽으세요</title>
+    <link>https://placeurl.com/shorts</link>
+    <guid>https://placeurl.com/shorts</guid>
+    <pubDate>Thu, 02 Apr 2026 06:10:00 +0000</pubDate>
+    <description>쇼츠 하나에 1~2만 원? 당신의 채널이 하루아침에 사라질 수 있습니다. 저작권 위반과 수익 창출 정지로부터 안전한 고퀄리티 AI 영상 제작 솔루션을 확인하세요.</description>
+  </item>
+  
+  <item>
+    <title>SNS 홍보 대행 및 퍼포먼스 마케팅</title>
+    <link>https://placeurl.com/sns-promotion</link>
+    <guid>https://placeurl.com/sns-promotion</guid>
+    <pubDate>Thu, 02 Apr 2026 06:10:00 +0000</pubDate>
+    <description>인스타그램, 페이스북, 유튜브 등 다양한 SNS 채널을 통한 효율적인 브랜드 홍보 및 마케팅 대행 서비스를 제공합니다.</description>
+  </item>
+  
+  <item>
+    <title>옥외 광고 및 오프라인 마케팅</title>
+    <link>https://placeurl.com/outdoor-ads</link>
+    <guid>https://placeurl.com/outdoor-ads</guid>
+    <pubDate>Thu, 02 Apr 2026 06:10:00 +0000</pubDate>
+    <description>버스, 지하철, 전광판 등 효과적인 옥외 광고 매체 선정부터 디자인 제작까지 한 번에 해결하세요.</description>
+  </item>
+
+  <item>
+    <title>고퀄리티 영상 제작 및 편집 서비스</title>
+    <link>https://placeurl.com/production</link>
+    <guid>https://placeurl.com/production</guid>
+    <pubDate>Thu, 02 Apr 2026 06:10:00 +0000</pubDate>
+    <description>브랜드 홍보 영상, 제품 리뷰, 인터뷰 등 목적에 맞는 최적의 영상 제작 및 편집 서비스를 제공합니다.</description>
+  </item>
+</channel>
+</rss>
