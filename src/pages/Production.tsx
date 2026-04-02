@@ -1,7 +1,7 @@
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import { useLocation, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { ArrowRight, CheckCircle2, Loader2, Users, BarChart3, MessageSquare, ShieldCheck, MapPin, Zap, Info } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Loader2, Users, BarChart3, MessageSquare, ShieldCheck, MapPin, Zap, Info, X, ExternalLink } from 'lucide-react';
 import { db } from '../firebase';
 import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import { handleFirestoreError, OperationType } from '../firebase';
@@ -82,6 +82,7 @@ export default function Production() {
   const [activeCategory, setActiveCategory] = useState("전체");
   const [templates, setTemplates] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  const [selectedTemplate, setSelectedTemplate] = useState<any | null>(null);
 
   useEffect(() => {
     if (!isWebsite) {
@@ -97,7 +98,10 @@ export default function Production() {
           id: doc.id,
           ...doc.data()
         }));
-        setTemplates(fetchedTemplates);
+        
+        // Randomize the order of templates
+        const shuffled = [...fetchedTemplates].sort(() => Math.random() - 0.5);
+        setTemplates(shuffled);
       } catch (error) {
         handleFirestoreError(error, OperationType.LIST, 'website_templates');
       } finally {
@@ -237,7 +241,7 @@ export default function Production() {
               ))}
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-24">
               {filteredTemplates.map((template) => (
                 <motion.div
                   key={template.id}
@@ -261,7 +265,10 @@ export default function Production() {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       referrerPolicy="no-referrer"
                     />
-                    <div className="absolute inset-0 bg-zinc-950/0 group-hover:bg-zinc-950/40 transition-all duration-500 flex items-center justify-center">
+                    <div 
+                      className="absolute inset-0 bg-zinc-950/0 group-hover:bg-zinc-950/40 transition-all duration-500 flex items-center justify-center cursor-pointer"
+                      onClick={() => setSelectedTemplate(template)}
+                    >
                       <button className="bg-white text-zinc-950 px-6 py-2.5 rounded-full font-bold text-sm opacity-0 group-hover:opacity-100 transition-all transform translate-y-4 group-hover:translate-y-0">
                         미리보기
                       </button>
@@ -273,6 +280,79 @@ export default function Production() {
                 </motion.div>
               ))}
             </div>
+
+            <div className="mt-20 py-10 border-t border-zinc-100 text-center">
+              <p className="text-zinc-400 text-sm font-medium">
+                본 리스트는 시장 트렌드 분석을 위해 큐레이션된 레퍼런스 사례를 포함하고 있습니다.
+              </p>
+            </div>
+
+            <AnimatePresence>
+              {selectedTemplate && (
+                <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-10">
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    onClick={() => setSelectedTemplate(null)}
+                    className="absolute inset-0 bg-zinc-950/90 backdrop-blur-sm"
+                  />
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                    className="relative w-full max-w-6xl h-full max-h-[90vh] bg-white rounded-[32px] overflow-hidden shadow-2xl flex flex-col"
+                  >
+                    <div className="flex items-center justify-between px-8 py-4 border-b border-zinc-100">
+                      <div className="flex items-center gap-4">
+                        <h3 className="text-xl font-black tracking-tight text-zinc-950">{selectedTemplate.title}</h3>
+                        <span className="px-3 py-1 bg-zinc-100 text-zinc-500 text-[10px] font-bold rounded-full uppercase tracking-widest">
+                          {selectedTemplate.category}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        {selectedTemplate.linkUrl && (
+                          <a 
+                            href={selectedTemplate.linkUrl} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="p-2 hover:bg-zinc-100 rounded-full transition-all text-zinc-500 hover:text-blue-600"
+                            title="새 창에서 열기"
+                          >
+                            <ExternalLink size={20} />
+                          </a>
+                        )}
+                        <button 
+                          onClick={() => setSelectedTemplate(null)}
+                          className="p-2 hover:bg-zinc-100 rounded-full transition-all text-zinc-500 hover:text-zinc-950"
+                        >
+                          <X size={24} />
+                        </button>
+                      </div>
+                    </div>
+                    <div className="flex-grow bg-zinc-50 relative">
+                      {selectedTemplate.linkUrl ? (
+                        <iframe 
+                          src={selectedTemplate.linkUrl} 
+                          className="w-full h-full border-none"
+                          title={selectedTemplate.title}
+                        />
+                      ) : (
+                        <div className="w-full h-full flex flex-col items-center justify-center p-12 text-center">
+                          <img 
+                            src={selectedTemplate.image} 
+                            alt={selectedTemplate.title}
+                            className="max-w-full max-h-[70vh] object-contain rounded-xl shadow-lg mb-8"
+                            referrerPolicy="no-referrer"
+                          />
+                          <p className="text-zinc-400 font-medium">미리보기 링크가 등록되지 않았습니다.</p>
+                        </div>
+                      )}
+                    </div>
+                  </motion.div>
+                </div>
+              )}
+            </AnimatePresence>
           </>
         ) : (
           <div className="space-y-32">
