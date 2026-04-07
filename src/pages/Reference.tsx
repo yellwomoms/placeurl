@@ -32,7 +32,7 @@ export default function Reference() {
   const [isSeeding, setIsSeeding] = useState(false);
   const fetchCount = useRef(0);
   
-  const ITEMS_PER_PAGE = window.innerWidth < 768 ? 12 : 16;
+  const ITEMS_PER_PAGE = window.innerWidth < 768 ? 60 : 80;
 
   const ADMIN_EMAIL = "sojil.com@gmail.com";
 

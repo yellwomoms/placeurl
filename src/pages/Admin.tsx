@@ -941,14 +941,10 @@ ${logs}
       let finalThumbnails = [...thumbnails];
       if (finalThumbnails.length === 0) {
         const autoThumb = getYoutubeThumbnail(linkUrl);
-        const isImageUrl = linkUrl.match(/\.(jpeg|jpg|gif|png|webp|svg)/i) || linkUrl.includes('images.unsplash.com') || linkUrl.includes('pinimg.com');
-        
         if (autoThumb) {
           finalThumbnails = [autoThumb];
-        } else if (isImageUrl) {
-          finalThumbnails = [linkUrl];
         } else {
-          toast.error('썸네일 이미지를 업로드하거나 유효한 이미지/유튜브 링크를 입력해주세요.');
+          toast.error('썸네일 이미지를 업로드하거나 유튜브 링크를 입력해주세요.');
           return;
         }
       }
@@ -965,7 +961,6 @@ ${logs}
       } else {
         data.title = title;
         data.image = finalThumbnails[0];
-        data.linkUrl = linkUrl;
       }
 
       const targetTable = activeTab === 'references' ? 'portfolio' : 'website_templates';
@@ -1675,11 +1670,9 @@ ${logs}
                     </div>
                   )}
                 </div>
-                {(activeTab === 'references' || activeTab === 'website') && (
+                {activeTab === 'references' && (
                   <div>
-                    <label className="block text-sm font-bold text-zinc-400 uppercase tracking-widest mb-3">
-                      {activeTab === 'references' ? 'Link URL' : 'Website URL (팝업용)'}
-                    </label>
+                    <label className="block text-sm font-bold text-zinc-400 uppercase tracking-widest mb-3">Link URL</label>
                     <div className="flex gap-2">
                       <div className="relative flex-1">
                         <LinkIcon className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400" size={20} />
@@ -1687,7 +1680,7 @@ ${logs}
                           type="text" 
                           value={linkUrl}
                           onChange={(e) => setLinkUrl(e.target.value)}
-                          placeholder={activeTab === 'references' ? "클릭 시 이동할 링크 주소를 입력하세요" : "미리보기 팝업에 표시할 웹사이트 주소를 입력하세요"}
+                          placeholder="클릭 시 이동할 링크 주소를 입력하세요"
                           className="w-full pl-12 pr-6 py-4 bg-zinc-50 border border-zinc-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-zinc-950 transition-all font-medium"
                         />
                       </div>
@@ -1695,8 +1688,6 @@ ${logs}
                         type="button"
                         onClick={() => {
                           const videoId = getYoutubeVideoId(linkUrl);
-                          const isImageUrl = linkUrl.match(/\.(jpeg|jpg|gif|png|webp|svg)/i) || linkUrl.includes('images.unsplash.com') || linkUrl.includes('pinimg.com');
-                          
                           if (videoId) {
                             const thumbs = [
                               `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
@@ -1708,7 +1699,7 @@ ${logs}
                             setThumbnails([thumbs[0]]);
                             setIsAutoThumb(true);
                             toast.success('YouTube thumbnails detected!');
-                          } else if (isImageUrl) {
+                          } else if (linkUrl.match(/\.(jpeg|jpg|gif|png|webp|svg)/i) || linkUrl.includes('images.unsplash.com')) {
                             setThumbnails(prev => prev.includes(linkUrl) ? prev : [...prev, linkUrl].slice(0, 4));
                             setYtThumbnails([]);
                             setIsAutoThumb(true);

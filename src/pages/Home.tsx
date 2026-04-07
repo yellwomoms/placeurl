@@ -45,8 +45,8 @@ function FeaturedPortfolio() {
         }
 
         if (allItems.length > 0) {
-          // Take top 28 items for the showcase
-          setItems(allItems.slice(0, 28));
+          // Take top 40 items for the showcase
+          setItems(allItems.slice(0, 40));
         } else {
           console.log("FeaturedPortfolio: No items found in either collection. Using fallbacks.");
           // Fallback to some sample items if DB is empty
