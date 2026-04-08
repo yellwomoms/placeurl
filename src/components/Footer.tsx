@@ -58,8 +58,8 @@ export default function Footer() {
             <ul className="space-y-6 text-zinc-400 font-bold">
               <li>상호명: 센트럴라인</li>
               <li>대표자: 김종상</li>
-              <li>사업자번호: 861-21-0013-632</li>
-              <li>주소: 인천광역시 연수구 하모니모 188번길 17</li>
+              <li>사업자번호: 806-22-00695</li>
+              <li>주소: 인천광역시 연수구 하모니모 188번길 17 sk뷰센트럴 102동 3303호</li>
             </ul>
           </div>
 
