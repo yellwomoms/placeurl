@@ -2283,7 +2283,7 @@ ${logs}
                                 </div>
                               </td>
                               <td className="px-6 py-4 text-right">
-                                <div className="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div className="flex justify-end gap-2">
                                   <button 
                                     onClick={(e) => {
                                       e.stopPropagation();
@@ -2470,7 +2470,7 @@ ${logs}
                       <option value="rejected">비승인</option>
                     </select>
                     <span className="text-zinc-400 text-sm font-bold flex items-center gap-2">
-                      <Clock size={16} /> {selectedFreelancer.createdAt ? new Date(selectedFreelancer.createdAt).toLocaleString() : ''}
+                      <Clock size={16} /> {formatDateTime(selectedFreelancer.createdAt)}
                     </span>
                   </div>
                   <div className="flex gap-2">
