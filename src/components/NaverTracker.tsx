@@ -6,6 +6,7 @@ declare global {
     wcs: any;
     wcs_add: any;
     _nasa: any;
+    wcs_do: any;
   }
 }
 
@@ -21,7 +22,9 @@ export default function NaverTracker() {
         window.wcs_add["wa"] = "s_21d013e25f46";
         if (!window._nasa) window._nasa = {};
         window.wcs.inflow();
-        window.wcs.wcs_do();
+        if (typeof window.wcs_do === 'function') {
+          window.wcs_do();
+        }
       }
     };
 

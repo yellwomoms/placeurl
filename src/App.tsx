@@ -20,7 +20,6 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <NaverTracker />
       <Toaster position="top-center" richColors />
       <Layout>
         <Routes>
