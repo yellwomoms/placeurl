@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'sonner';
 import Layout from './components/Layout';
 import ScrollToTop from './components/ScrollToTop';
+import NaverTracker from './components/NaverTracker';
 import Home from './pages/Home';
 import Shorts from './pages/Shorts';
 import Reference from './pages/Reference';
@@ -19,6 +20,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
+      <NaverTracker />
       <Toaster position="top-center" richColors />
       <Layout>
         <Routes>
